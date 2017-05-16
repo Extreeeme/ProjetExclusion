@@ -19,16 +19,16 @@ class DBAuth {
     }
 
     /**
-     * @param $username
+     * @param $pseudo
      * @param $password
      * @return boolean
      */
-    public function login($username, $password){
-        $user = $this->db->prepare('SELECT * FROM users WHERE username = ?', [$username], null, true);
-        var_dump(sha1($password));
+    public function login($pseudo, $password){
+        $user = $this->db->prepare('SELECT * FROM users WHERE pseudo = ?', [$pseudo], null, true);
         if($user){
             if($user->password === sha1($password)){
-                $_SESSION['auth'] = $user->id;
+                $user->rights == 1 ? $_SESSION['auth'] = "admin" : $_SESSION['auth'] = "user";
+                $_SESSION["user"] = $user->id;
                 return true;
             }
         }
@@ -39,4 +39,20 @@ class DBAuth {
         return isset($_SESSION['auth']);
     }
 
-}
+public function register($username, $password, $birthday, $mail){
+        $user = $this->db->prepare('SELECT * FROM users WHERE pseudo = ? OR mail = ?', [$username, $mail], null, true);
+        if(!$user){
+                $password = sha1($password);
+                $this->db->prepare("INSERT INTO users
+                                    SET pseudo = ?, password = ?, mail = ?",
+                                    [$username, $password, $mail]);
+                $id = $this->db->lastInsertId();
+                $this->db->prepare("INSERT INTO profilpictures
+                                    SET src = ?, users_id = ?",
+                                    ['http://www.snut.fr/wp-content/uploads/2015/06/image-de-profil-2.jpg', $id]);
+                return true;
+            }
+        }
+     
+    }
+
