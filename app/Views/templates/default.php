@@ -18,11 +18,22 @@
 <body>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="index.php">Project name</a>
-        </div>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.php">Contre l'exclusion</a>
     </div>
+
+    <ul class="nav navbar-nav navbar-left">
+      <li><a href="">Blog</a></li>
+      <li><a href="">Assoc</a></li>
+      <li><a href="">Aide</a></li>
+      <li><a href="">Témoignage</a></li>
+      <li><a href="">Campagne</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+       <li><a href="">Inscription</a></li>
+    </ul>
+  </div>
 </nav>
 
 <div class="container">
