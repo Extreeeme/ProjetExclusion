@@ -20,10 +20,20 @@ class PostsController extends AppController{
         $this->render('posts.index'); //compact('posts', 'categories'));
     }
 
-    public function allTestimony()
+    public function allTestimonies()
     {
       $testimonies = $this->Testimonie->All();
       $this->render('posts.testimonies', compact('testimonies'));
+    }
+    public function FormTestimony()
+    {
+      $this->render('posts.formTestimonies');
+    }
+
+    public function postTestimony()
+    {
+      $testimony = htmlspecialchars($_POST['testimony']);
+      $this->Testimonie->Post($testimony, $_POST['user']);
     }
 
     public function category(){

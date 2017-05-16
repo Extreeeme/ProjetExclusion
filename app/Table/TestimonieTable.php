@@ -13,9 +13,18 @@ class TestimonieTable extends Table{
      */
     public function All(){
         return $this->query("
-            SELECT *
-            FROM testitmonies
+            SELECT testimonies.date, testimonies.text, users.pseudo
+            FROM testimonies
             LEFT JOIN users ON testimonies.users_id = users.id
             ");
+    }
+
+    public function Post($testimony, $id)
+    {
+      $this->db->prepare("INSERT INTO testimonies
+                        SET date = NOW(), text = ?, users_id = ?",
+                        array($testimony, $id));
+      header('Location: index.php?p=posts.allTestimonies');
+      exit();
     }
 }

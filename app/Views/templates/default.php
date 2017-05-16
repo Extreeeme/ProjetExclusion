@@ -27,7 +27,7 @@
       <li><a href="">Blog</a></li>
       <li><a href="">Assoc</a></li>
       <li><a href="">Aide</a></li>
-      <li><a href="index.php?p=posts.allTestimony">Témoignage</a></li>
+      <li><a href="index.php?p=posts.allTestimonies">Témoignage</a></li>
       <li><a href="">Campagne</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
