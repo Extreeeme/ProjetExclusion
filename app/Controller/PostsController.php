@@ -10,6 +10,7 @@ class PostsController extends AppController{
         parent::__construct();
         //$this->loadModel('Post');
         //$this->loadModel('Category');
+        $this->loadModel('Testimonie');
 
     }
 
@@ -17,6 +18,12 @@ class PostsController extends AppController{
         //$posts = $this->Post->last();
         //$categories = $this->Category->all();
         $this->render('posts.index'); //compact('posts', 'categories'));
+    }
+
+    public function allTestimony()
+    {
+      $testimonies = $this->Testimonie->All();
+      $this->render('posts.testimonies', compact('testimonies'));
     }
 
     public function category(){
