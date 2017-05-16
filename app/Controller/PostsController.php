@@ -11,6 +11,7 @@ class PostsController extends AppController{
         //$this->loadModel('Post');
         //$this->loadModel('Category');
         $this->loadModel('Testimonie');
+        $this->loadModel('Blog');
 
     }
 
@@ -39,6 +40,12 @@ class PostsController extends AppController{
     public function show(){
         $article = $this->Post->findWithCategory($_GET['id']);
         $this->render('posts.show', compact('article'));
+    }
+
+    public function blog()
+    {
+        $blog = $this->Blog->selectArticle();
+        $this->render('posts.blog', compact('blog'));
     }
 
 }
