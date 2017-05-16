@@ -1,4 +1,3 @@
-<?php var_dump($blog) ?>
 
 <?php foreach ($blog as $article) : ?>
 <h1><?= $article["title"] ?></h1>
