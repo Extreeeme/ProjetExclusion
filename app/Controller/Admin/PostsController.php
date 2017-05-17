@@ -10,11 +10,28 @@ class PostsController extends AppController{
         parent::__construct();
         $this->loadModel('Post');
         $this->loadModel('Blog');
+        $this->loadModel('Testimonie');
     }
 
     public function index(){
         $posts = $this->Post->all();
         $this->render('admin.posts.index', compact('posts'));
+    }
+
+    public function adminTestimony()
+    {
+      $testimonies = $this->Testimonie->AllNotValid();
+      $this->render('admin.posts.testimonies', compact('testimonies'));
+    }
+
+    public function validTestimony()
+    {
+      if(isset($_POST['id'])){
+        $id = $_POST['id'];
+        $this->Testimonie->valid($id);
+      }else{
+        header('Location: index.php?p=admin.posts.testimonies');
+      }
     }
 
     public function add(){
