@@ -1,4 +1,3 @@
-<?php var_dump($pagination); ?>
 <?php foreach ($pagination as $article) : ?>
 <h1><?= $article->title?></h1>
 <p><?= $article->date_creation_fr ?></p>
