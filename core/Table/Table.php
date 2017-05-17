@@ -9,9 +9,7 @@ class Table
     protected $table;
     protected $db;
 
-    protected function count(){
-        return $this->query("SELECT COUNT(id) FROM $this->table");
-    }
+    
 
     public function __construct(Database $db)
     {
@@ -21,6 +19,10 @@ class Table
             $class_name = end($parts);
             $this->table = strtolower(str_replace('Table', '', $class_name)) . 's';
         }
+    }
+
+    protected function count(){
+        return $this->query("SELECT COUNT(id) as nbrow FROM $this->table",null,true,null);
     }
 
     public function all(){
@@ -67,27 +69,31 @@ class Table
         return $return;
     }
 
-    public function query($statement, $attributes = null, $one = false){
+    public function query($statement, $attributes = null, $one = false, $classename = false){
+        if($classename===false){
+            $classename= str_replace('Table', 'Entity', get_class($this));
+        }
+
         if($attributes){
 
             return $this->db->prepare(
                 $statement,
                 $attributes,
-                str_replace('Table', 'Entity', get_class($this)),
+                $classename,
                 $one
             );
         } else {
             return $this->db->query(
                 $statement,
-                str_replace('Table', 'Entity', get_class($this)),
+                $classename,
                 $one
             );
         }
     }
 
-    public function pagination($page = 1, $nbDisplay = 6){
+    public function pagination($page = 1, $nbDisplay = 2){
         $nbRows = $this->count();
-        $pagination = ceil((int) $nbRows / $nbDisplay);
+        $pagination = round((int)$nbRows->nbrow / $nbDisplay);
         $start = $page * $nbDisplay - $nbDisplay;
         $resultats = $this->query(" SELECT articles.title,
          articles.text,

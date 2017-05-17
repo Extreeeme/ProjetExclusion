@@ -54,9 +54,15 @@ class PostsController extends AppController{
 
     public function blog()
     {
+        if (isset($_GET['page'])) {
+            $page = $_GET['page'];
+        }else{
+            $page = 1;
+        }
         $blog = $this->Blog->selectArticle();
-        $pagination = $this->Blog->pagination();
-        $this->render('posts.blog', compact('blog', 'pagination'));
+        $pagination = $this->Blog->pagination($page);
+        $nbpage = array_pop($pagination);
+        $this->render('posts.blog', compact('blog', 'pagination', 'nbpage'));
     }
 
 }

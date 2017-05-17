@@ -7,7 +7,8 @@
 
 <?php 
 $customPagination = 0;
-while ($customPagination < $pagination["nbpage"]) {
- 	echo '<span><a href"?p='.($customPagination+1).'">'.($customPagination+1).'</a></span>';
+while ($customPagination < $nbpage) {
+ 	echo '<span><a href="index.php?p=posts.blog&page='.($customPagination+1).'">'.($customPagination+1).'</a>|</span>';
  	$customPagination++;
+	
  } ?>
