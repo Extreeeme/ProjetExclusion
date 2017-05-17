@@ -31,7 +31,7 @@
       <li><a href="">Campagne</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-       <li><a href="">Inscription</a></li>
+       <li><a href="index.php?p=users.login">Connexion</a></li>
     </ul>
   </div>
 </nav>
