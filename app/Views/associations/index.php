@@ -1,4 +1,3 @@
-<?= var_dump($_FILES["img"]);?>
 <form method="post" enctype="multipart/form-data">
 	
 	<?=$form->input('name','Nom de l\'association',['type'=>'text']);?>
