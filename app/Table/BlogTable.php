@@ -15,7 +15,6 @@ class BlogTable extends Table{
     	 users.pseudo
     	 FROM articles
     	 LEFT JOIN users ON articles.users_id = users.id
-         ORDER BY date_creation_fr DESC ");
+         ORDER BY date_creation_fr DESC");
     }
-
 }
