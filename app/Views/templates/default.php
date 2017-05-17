@@ -28,7 +28,7 @@
       <li><a href="">Assoc</a></li>
       <li><a href="">Aide</a></li>
       <li><a href="">Témoignage</a></li>
-      <li><a href="">Campagne</a></li>
+      <li><a href="?p=campagnes.index">Campagne</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
        <li><a href="">Inscription</a></li>
