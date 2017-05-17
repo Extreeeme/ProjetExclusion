@@ -9,6 +9,10 @@ class Table
     protected $table;
     protected $db;
 
+    protected function count(){
+        return $this->query("SELECT COUNT(id) FROM $this->table");
+    }
+
     public function __construct(Database $db)
     {
         $this->db = $db;
@@ -65,6 +69,7 @@ class Table
 
     public function query($statement, $attributes = null, $one = false){
         if($attributes){
+
             return $this->db->prepare(
                 $statement,
                 $attributes,
@@ -78,6 +83,21 @@ class Table
                 $one
             );
         }
+    }
+
+    public function pagination($page = 1, $nbDisplay = 6){
+        $nbRows = $this->count();
+        $pagination = ceil((int) $nbRows / $nbDisplay);
+        $start = $page * $nbDisplay - $nbDisplay;
+        $resultats = $this->query(" SELECT articles.title,
+         articles.text,
+         DATE_FORMAT(date, 'Le %d/%m/%Y à %H:%i:%s') as date_creation_fr,
+         users.pseudo FROM $this->table 
+         LEFT JOIN users ON articles.users_id = users.id 
+         ORDER BY date_creation_fr DESC 
+         LIMIT $start, $nbDisplay");
+        $resultats['nbpage']=$pagination;
+        return $resultats;
     }
 
 }

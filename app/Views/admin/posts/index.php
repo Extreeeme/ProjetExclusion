@@ -14,7 +14,6 @@
     </tr>
     </thead>
     <tbody>
-    <?php var_dump($posts) ?>
         <?php foreach($posts as $post): ?>
         <tr>
             <td><?= $post->id; ?></td>

@@ -55,7 +55,8 @@ class PostsController extends AppController{
     public function blog()
     {
         $blog = $this->Blog->selectArticle();
-        $this->render('posts.blog', compact('blog'));
+        $pagination = $this->Blog->pagination();
+        $this->render('posts.blog', compact('blog', 'pagination'));
     }
 
 }
