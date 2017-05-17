@@ -2,6 +2,7 @@
 
 <p>
     <a href="?p=admin.posts.add" class="btn btn-success">Ajouter</a>
+    <a href="?p=admin.posts.blog" class="btn btn-success">Ajouter un article sur le blog</a>
 </p>
 
 <table class="table">
@@ -16,7 +17,7 @@
         <?php foreach($posts as $post): ?>
         <tr>
             <td><?= $post->id; ?></td>
-            <td><?= $post->titre; ?></td>
+            <td><?= $post->title; ?></td>
             <td>
                 <a class="btn btn-primary" href="?p=admin.posts.edit&id=<?= $post->id; ?>">Editer</a>
                 <form action="?p=admin.posts.delete" method="post" style="display: inline;">

@@ -10,10 +10,11 @@ class UsersController extends AppController {
 
     public function login(){
         $errors = false;
+       
         if(!empty($_POST)){
             $auth = new DBAuth(App::getInstance()->getDb());
-            if($auth->login($_POST['username'], $_POST['password'])){
-                header('Location: index.php?p=admin.posts.index');
+            if($auth->login($_POST['username'], $_POST['user_password'])){
+                header('Location: index.php?p=posts.index');
             } else {
                 $errors = true;
             }
@@ -22,4 +23,14 @@ class UsersController extends AppController {
         $this->render('users.login', compact('form', 'errors'));
     }
 
+
+    public function disconnect()
+    {
+        session_destroy();
+        header("Location: index.php");
+        exit();
+    }
 }
+
+
+

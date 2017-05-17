@@ -23,12 +23,12 @@ class DBAuth {
      * @param $password
      * @return boolean
      */
-    public function login($username, $password){
+    public function login($username, $user_password ){
         $user = $this->db->prepare('SELECT * FROM users WHERE username = ?', [$username], null, true);
-        var_dump(sha1($password));
         if($user){
-            if($user->password === sha1($password)){
-                $_SESSION['auth'] = $user->id;
+            if($user->user_password === ($user_password)){
+                $user->rights == 1 ? $_SESSION['auth'] = "admin" : $_SESSION['auth'] = "username";
+                $_SESSION["user"] = $user->id;
                 return true;
             }
         }
@@ -39,4 +39,7 @@ class DBAuth {
         return isset($_SESSION['auth']);
     }
 
-}
+
+     }
+    
+

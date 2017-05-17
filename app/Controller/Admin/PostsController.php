@@ -9,6 +9,7 @@ class PostsController extends AppController{
     public function __construct(){
         parent::__construct();
         $this->loadModel('Post');
+        $this->loadModel('Blog');
     }
 
     public function index(){
@@ -56,6 +57,22 @@ class PostsController extends AppController{
             $result = $this->Post->delete($_POST['id']);
             return $this->index();
         }
+    }
+
+    public function blog()
+    {
+        if (!empty($_POST)) {
+            $result = $this->Blog->create([
+                'title' => $_POST['title'],
+                'text' => $_POST['text']
+            ]);
+            if($result){
+                return $this->index();
+            }
+        }
+        $this->loadModel('Blog');
+        $form = new BootstrapForm();
+        $this->render('admin.posts.blog', compact('blog', 'form'));
     }
 
 }
