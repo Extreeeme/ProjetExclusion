@@ -25,8 +25,6 @@
 
     <ul class="nav navbar-nav navbar-left">
       <li><a href="index.php?p=posts.blog">Blog</a></li>
-      <li><a href="">Assoc</a></li>
-      <li><a href="">Blog</a></li>
       <li><a href="index.php?p=associations.index">Assoc</a></li>
       <li><a href="">Aide</a></li>
       <li><a href="index.php?p=posts.allTestimonies">Témoignage</a></li>
