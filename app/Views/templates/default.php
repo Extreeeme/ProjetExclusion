@@ -37,7 +37,7 @@
         <li><a href="index.php?p=posts.blog">Blog</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-         <li><a href="index.php?p=users.login">Connexion</a></li>
+         <li><?= $_SESSION['connect']?></li>
       </ul>
     </div>
 
