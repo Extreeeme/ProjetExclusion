@@ -11,16 +11,17 @@ class AssociationsController extends AppController{
         $this->loadModel('Association');
 
     }
-
-    public function index(){
-    	if (isset($_POST['name'] , $_FILES['img'] , $_POST['description'])) {
+    
+    public function help()
+    {
+      if (isset($_POST['name'] , $_FILES['img'] , $_POST['description'])) {
     		$assoces= $this->Association->insertion($_POST['name'] , $_FILES['img']['name'] , $_POST['description']);
     		$dir = ROOT ."/public/img";
     		$name= $_FILES['img']['name'];
     		$taille_maxi = 100000;
 		    $taille = filesize($_FILES['img']['tmp_name']);
 		    $extensions = array('.png', '.gif', '.jpg', '.jpeg');
-		    $extension = strrchr($_FILES['img']['name'], '.'); 
+		    $extension = strrchr($_FILES['img']['name'], '.');
 		    //Début des vérifications de sécurité...
 			    if(in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
 			    {
@@ -29,13 +30,13 @@ class AssociationsController extends AppController{
 							echo 'ERROR';
 						}else{
 							echo "C'est bon !";
-						}	
-					}	
+						}
+					}
 				}
 			}
 
 			$associations = $this->Association->all();
 			$form= new BootstrapForm();
-			$this->render('associations.index', compact('associations','form'));
+      $this->render('associations.help', compact('associations','form'));
     }
 }

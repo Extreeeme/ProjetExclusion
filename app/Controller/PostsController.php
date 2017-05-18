@@ -70,5 +70,4 @@ class PostsController extends AppController{
         $form = new BootstrapForm();
         $this->render('posts.blog', compact('pagination', 'nbpage', 'form'));
     }
-
 }
