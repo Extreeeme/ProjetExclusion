@@ -27,7 +27,7 @@
       </ul>
     </div>
 
-    <img src="style/img/logo.png" alt="LGBH" id="logo">
+    <img src="img/logo.png" alt="LGBH" id="logo">
 
   </div>
   <div id="content">

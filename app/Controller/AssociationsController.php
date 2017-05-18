@@ -14,29 +14,12 @@ class AssociationsController extends AppController{
     
     public function help()
     {
-      if (isset($_POST['name'] , $_FILES['img'] , $_POST['description'])) {
-    		$assoces= $this->Association->insertion($_POST['name'] , $_FILES['img']['name'] , $_POST['description']);
-    		$dir = ROOT ."/public/img";
-    		$name= $_FILES['img']['name'];
-    		$taille_maxi = 100000;
-		    $taille = filesize($_FILES['img']['tmp_name']);
-		    $extensions = array('.png', '.gif', '.jpg', '.jpeg');
-		    $extension = strrchr($_FILES['img']['name'], '.');
-		    //Début des vérifications de sécurité...
-			    if(in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
-			    {
-				    if($taille<$taille_maxi){
-				         if (!move_uploaded_file($_FILES['img']['tmp_name'], "$dir/$name")) {
-							echo 'ERROR';
-						}else{
-							echo "C'est bon !";
-						}
-					}
-				}
-			}
+      	if (isset($_POST['name'] , $_FILES['img'] , $_POST['description'])) {
+    		$assoces = $this->Association->uploadImg($_POST['name'], $_FILES['img'], $_POST['description']);
+		}
 
-			$associations = $this->Association->all();
-			$form= new BootstrapForm();
-      $this->render('associations.help', compact('associations','form'));
+		$associations = $this->Association->all();
+		$form= new BootstrapForm();
+    	$this->render('associations.help', compact('associations','form'));
     }
 }
