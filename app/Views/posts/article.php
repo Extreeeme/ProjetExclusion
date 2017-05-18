@@ -15,8 +15,7 @@
   <?php endif; ?>
 
 </div>
-<form
-method="POST">
+<form method="POST">
 	<?= $form->input('author', 'Pseudo'); ?>
 	<?= $form->input('comment', 'Laisser un commentaire', ["type" => "textarea"]);?>
 	<input type="hidden" name="id_article" value="<?= $article->id ?>" />
