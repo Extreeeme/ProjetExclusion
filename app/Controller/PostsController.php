@@ -56,10 +56,6 @@ class PostsController extends AppController{
 
     public function blog()
     {
-        if(isset($_POST["author"], $_POST["comment"])){
-            $comment= $this->Comment->addComment($_POST["author"], $_POST["comment"], $_POST["id_article"]);
-            var_dump($comment);
-        }
         if (isset($_GET['page'])) {
             $page = $_GET['page'];
         }else{
@@ -69,5 +65,20 @@ class PostsController extends AppController{
         $nbpage = array_pop($pagination);
         $form = new BootstrapForm();
         $this->render('posts.blog', compact('pagination', 'nbpage', 'form'));
+    }
+
+    public function showArticle()
+    {
+      if(isset($_POST["author"], $_POST["comment"])){
+          $comment= $this->Comment->addComment($_POST["author"], $_POST["comment"], $_POST["id_article"]);
+      }
+      if(isset($_GET['id'])){
+        $article = $this->Blog->articleID($_GET['id']);
+        $comments = $this->Blog->commentsID($_GET['id']);
+        $form = new BootstrapForm();
+        $this->render('posts.article', compact('article', 'form', 'comments'));
+      }else{
+        $this->notFound();
+      }
     }
 }
