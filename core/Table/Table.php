@@ -111,12 +111,9 @@ class Table
         return $resultats;
     }
 
-    public function uploadImg($name, $img, $description, $way="/public/img"){
-         if (isset($name, $img, $description)) {
-            $assoces= $this->query("INSERT INTO $this->table
-                        SET name = ?, img = ?, description = ?",
-                        array($name, $img["name"], $description));
-
+    public function uploadImg($array, $img, $way="/public/img"){
+         if (isset($array, $img)) {
+            $assoces= $this->create($array);
             $dir = ROOT .$way;
             $name= $img['name'];
             $taille_maxi = 100000;

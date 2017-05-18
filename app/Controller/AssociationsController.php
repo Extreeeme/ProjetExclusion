@@ -15,7 +15,10 @@ class AssociationsController extends AppController{
     public function help()
     {
       	if (isset($_POST['name'] , $_FILES['img'] , $_POST['description'])) {
-    		$assoces = $this->Association->uploadImg($_POST['name'], $_FILES['img'], $_POST['description']);
+    		$assoces = $this->Association->uploadImg(["name" => $_POST['name'], 
+    												  "img" => $_FILES['img']['name'], 
+    												  "description" => $_POST['description']], 
+    												  $_FILES["img"]);
 		}
 
 		$associations = $this->Association->all();
