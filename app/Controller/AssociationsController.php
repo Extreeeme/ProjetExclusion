@@ -17,7 +17,9 @@ class AssociationsController extends AppController{
       	if (isset($_POST['name'] , $_FILES['img'] , $_POST['description'])) {
     		$assoces = $this->Association->uploadImg(["name" => $_POST['name'], 
     												  "img" => $_FILES['img']['name'], 
-    												  "description" => $_POST['description']], 
+    												  "description" => $_POST['description'],
+                                                      "siteWeb"=> $_POST['siteWeb'],
+                                                      "Numerodetel"=> $_POST['Numerodetel']], 
     												  $_FILES["img"]);
 		}
 

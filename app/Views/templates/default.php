@@ -36,8 +36,9 @@
     </div>
 
     <img src="img/logo.png" alt="LGBH" id="logo">
-
+  
   </div>
+  <div id="sous-header"></div>
   <div id="content">
 
         <?= $content; ?>
