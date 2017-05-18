@@ -96,11 +96,16 @@ class Table
         $pagination = round((int)$nbRows->nbrow / $nbDisplay);
         $start = $page * $nbDisplay - $nbDisplay;
         $resultats = $this->query(" SELECT articles.title,
+         articles.id,   
          articles.text,
-         DATE_FORMAT(date, 'Le %d/%m/%Y à %H:%i:%s') as date_creation_fr,
+         DATE_FORMAT(articles.date, 'Le %d/%m/%Y à %H:%i:%s') as date_article_fr,
+         comments.authors,
+         comments.texte,   
+         DATE_FORMAT(comments.date, 'Le %d/%m/%Y à %H:%i:%s') as date_comment_fr,
          users.pseudo FROM $this->table 
-         LEFT JOIN users ON articles.users_id = users.id 
-         ORDER BY date_creation_fr DESC 
+         LEFT JOIN users ON articles.users_id = users.id
+         LEFT JOIN comments ON comments.id_article = articles.id 
+         ORDER BY date_article_fr DESC 
          LIMIT $start, $nbDisplay");
         $resultats['nbpage']=$pagination;
         return $resultats;

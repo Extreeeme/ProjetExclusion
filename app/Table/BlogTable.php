@@ -10,6 +10,7 @@ class BlogTable extends Table{
     public function selectArticle()
     {
     	return $this->query(" SELECT articles.title,
+         articles.id,
     	 articles.text,
     	 DATE_FORMAT(date, 'Le %d/%m/%Y à %H:%i:%s') as date_creation_fr,
     	 users.pseudo
