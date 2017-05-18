@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use Core\HTML\Zip;
+
 use Core\Controller\Controller;
 
 class CampagnesController extends AppController{

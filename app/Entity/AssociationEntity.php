@@ -3,6 +3,8 @@ namespace App\Entity;
 
 use Core\Entity\Entity;
 
-class TestimonieEntity extends Entity{
+class AssociationEntity extends Entity{
+
+    
 
 }
