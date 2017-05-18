@@ -23,6 +23,9 @@ class PostsController extends AppController{
         $this->render('posts.index'); //compact('posts', 'categories'));
     }
 
+    public function campagne(){
+        $this->render('posts.campagne');
+    }
     public function allTestimonies()
     {
       $testimonies = $this->Testimonie->All();

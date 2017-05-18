@@ -1,22 +1,28 @@
-<h1>ICI LES AIDES LES NUMÉROS ET LES BENEVOLES</h1>
-
-<form method="post" enctype="multipart/form-data">
-
-	<?=$form->input('name','Nom de l\'association',['type'=>'text']);?>
-	<?=$form->input('siteWeb','Adresse du site web',['type'=>'url']);?>
-	<?=$form->input('Numerodetel','Numero de Téléphone',['type'=>'text']);?>
-	<?=$form->input('img','Logo Association',['type'=>'file']);?>
-	<?=$form->input('description','Description Association',['type'=>'textarea']);?>
-	<?=$form->submit('envoyer');?>
-</form>
-
-<?php foreach ($associations as $assocs): ?>
-	
-
-	<div><?=$assocs->name ?></div>
-	<div><?=$assocs->siteWeb?></div>
-	<div><?=$assocs->Numerodetel?></div>
-	<img style="max-width: 200px;" src="img/<?=$assocs->img ?>">
-	<div><?=$assocs->description ?></div>
-
-<?php endforeach; ?>
+<div id="help">
+    <div class="h1-association">
+        <h1>Vous cherchez de l'aide ? Du soutien ? Quelqu'un à qui se confier ? <br> Toutes les solutions sont ici.</h1>
+    </div>
+    <?php if(isset($_SESSION['auth'])): ?>
+    <form method="post" enctype="multipart/form-data">
+        <?=$form->input('name','Nom de l\'association',['type'=>'text']);?>
+        <?=$form->input('siteWeb','Adresse du site web',['type'=>'url']);?>
+        <?=$form->input('Numerodetel','Numero de Téléphone',['type'=>'text']);?>
+        <?=$form->input('img','Logo Association',['type'=>'file']);?>
+        <?=$form->input('description','Description Association',['type'=>'textarea']);?>
+        <?=$form->submit('envoyer');?>
+    </form>
+    <?php else : ?>
+    <?php endif; ?>
+    <div class="zone">
+        <?php foreach ($associations as $assocs): ?>
+            <div id="associations">
+                <h1 id="titleAssociation"><?=$assocs->name ?></h1>
+                <div class="flex">
+                    <img src="img/<?=$assocs->img ?>">
+                    <p><?=$assocs->description ?></p>
+                </div>
+                <p class="telephone-association">☎ Contact : 0x.xx.xx.xx.xx - @Mail : xxxxxxxx@xxxxxxxxx.fr</p>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
