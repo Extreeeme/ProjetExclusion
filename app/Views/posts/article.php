@@ -1,6 +1,8 @@
 <h1> <a href="index.php?p=posts.showArticle&id=<?=$article->id?>"><?= $article->title?></a></h1>
 <p><?= $article->date_article_fr ?></p>
 <p><?= $article->text ?></p>
+
+<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
 <div class="form">
 	<h4><strong>Commentaires</strong></h4>
   <?php if ($comments): ?>
@@ -13,7 +15,8 @@
   <?php endif; ?>
 
 </div>
-<form method="POST">
+<form
+method="POST">
 	<?= $form->input('author', 'Pseudo'); ?>
 	<?= $form->input('comment', 'Laisser un commentaire', ["type" => "textarea"]);?>
 	<input type="hidden" name="id_article" value="<?= $article->id ?>" />
