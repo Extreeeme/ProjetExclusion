@@ -64,5 +64,4 @@ class PostsController extends AppController{
         $nbpage = array_pop($pagination);
         $this->render('posts.blog', compact('blog', 'pagination', 'nbpage'));
     }
-
 }
