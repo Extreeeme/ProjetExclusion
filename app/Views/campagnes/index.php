@@ -2,9 +2,8 @@
     <div class="col-sm-8">
         <?php foreach ($campagne as $campagne): ?>
 
-            <h2><?= $campagne->id; ?></a></h2>
-
             <p><?= $campagne->img; ?></p>
+            <input type="checkbox" name="<?= $campagne->id; ?>" value="<?= $campagne->id; ?>" /><?= $campagne->id; ?><br>
 
         <?php endforeach; ?>
 
