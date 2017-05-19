@@ -54,11 +54,11 @@
         <li><a href="index.php?p=posts.blog">Blog</a></li>
       </ul>
     </div>
-    <h5>Crée par LaFabrik du Numérique | Copyright @ 2017 La Fabrik</h5>
     <div id="icone-rs">
       <i class="devicon-facebook-plain"></i>
       <i class="devicon-twitter-plain"></i>
     </div>
+    <h5>Crée par LaFabrik du Numérique | Copyright @ 2017 La Fabrik</h5>
   </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
