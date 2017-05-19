@@ -38,6 +38,7 @@ a{
 }
 #content{
 	width: 100%;
+  min-height: 370px;
 }
 
 #footer{
@@ -50,9 +51,11 @@ a{
 }
 
 #plan-site ul{
-    display: flex;
-    list-style: none;
-    margin-top: -20px;
+   position: absolute;
+   top: 45px;
+   display: flex;
+   list-style: none;
+   margin-top: -20px;
 }
 
 #plan-site ul li{
