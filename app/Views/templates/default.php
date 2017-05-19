@@ -11,6 +11,14 @@
   <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/4f6a4b08efdad6bb29f9cc801f5c07e263b39907/devicon.min.css">
 </head>
 <body>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.9&appId=421674024852694";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
   <div id="header">
 
     <div  id="navmobile" class="hidden">
@@ -30,16 +38,15 @@
         <li><a href="index.php?p=posts.blog">Blog</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-         <li><a href="index.php?p=users.login">Connexion</a></li>
+         <li><?= $_SESSION['connect']?></li>
       </ul>
     </div>
 
     <img src="img/logo.png" alt="LGBH" id="logo">
-
   </div>
   <div id="sous-header"></div>
   <div id="content">
-       
+
         <?= $content; ?>
 
   </div>

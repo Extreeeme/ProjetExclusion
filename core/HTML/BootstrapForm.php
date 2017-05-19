@@ -7,7 +7,7 @@ class BootstrapForm extends Form{
      * @return string
      */
     protected function surround($html){
-        return "<div class=\"form-group\">{$html}</div>";
+        return "<tr>{$html}</tr>";
     }
 
     /**
@@ -18,11 +18,11 @@ class BootstrapForm extends Form{
      */
     public function input($name, $label, $options = []){
         $type = isset($options['type']) ? $options['type'] : 'text';
-        $label = '<label>' . $label . '</label>';
+        $label = '<td><label>' . $label . '</label></td>';
         if($type === 'textarea'){
-            $input = '<textarea name="' . $name . '" class="form-control">' . $this->getValue($name) . '</textarea>';
+            $input = '<td><textarea name="' . $name . '" class="form-control">' . $this->getValue($name) . '</textarea></td>';
         } else{
-            $input = '<input type="' . $type . '" name="' . $name . '" value="' . $this->getValue($name) . '" class="form-control">';
+            $input = '<td><input type="' . $type . '" name="' . $name . '" value="' . $this->getValue($name) . '" class="form-control"></td>';
         }
         return $this->surround($label . $input);
     }
