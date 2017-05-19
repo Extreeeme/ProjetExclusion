@@ -23,6 +23,7 @@ class DBAuth {
             if($user->password === sha1($user_password)){
                 $user->rights == 1 ? $_SESSION['auth'] = "admin" : $_SESSION['auth'] = "username";
                 $_SESSION["user"] = $user->id;
+                $_SESSION['connect'] = "<a href='index.php?p=users.disconnect'>Deconnexion</a>";
                 return true;
             }
         }
@@ -31,4 +32,14 @@ class DBAuth {
     public function logged(){
         return isset($_SESSION['auth']);
     }
-     }
+    public function logout()
+    {
+        if ($this->logged()){
+            unset($_SESSION['auth']);
+            $_SESSION['connect'] = "<a href='index.php?p=users.login'>Connexion</a>";
+            return true;
+        }
+        return false;
+    }
+
+}
