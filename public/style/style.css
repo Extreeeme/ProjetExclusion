@@ -71,6 +71,15 @@ i{
     font-size: 40px;
 }
 
+.container{
+  width: 50%;
+  height: 500px;
+  margin-top: 50px;
+  margin-bottom: 150px;
+  margin-right: 50px;
+  z-index: -1;
+}
+
 /*
   menu icon css3
 */
