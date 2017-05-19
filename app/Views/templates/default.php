@@ -20,27 +20,27 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
   <div id="header">
-
-    <div  id="navmobile" class="hidden">
-      <div class="menu-icon" onclick="navMobile()">
+    <div class="menu-icon" onclick="navMobile()">
           <span></span>
       </div>
-      <ul class="nav navbar-nav navbar-left">
-        <li><a href="index.php?p=posts.index">Accueil</a></li>
-        <li><a href="index.php?p=associations.help">Trouver de l'aide</a></li>
-        <li><a href="index.php?p=posts.allTestimonies">Témoignages</a></li>
-        <?php if (isset($_SESSION['auth'])): ?>
-        <li><a href="index.php?p=admin.posts.adminTestimony">Validation Témoignage ADMIN</a></li>
-        <li><a href="index.php?p=admin.posts.blog">Ajout d'article</a></li>
-          
-        <?php endif ?>
-        <li><a href="index.php?p=posts.campagne">La Campagne</a></li>
-        <li><a href="index.php?p=posts.blog">Blog</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-         <li><?= $_SESSION['connect']?></li>
-      </ul>
+    <div  id="navmobile" class="hidden">      
+     
+    <a href="index.php?p=posts.index" class="firstA">Accueil</a>
+    <a href="index.php?p=associations.help">Trouver de l'aide</a>
+    <a href="index.php?p=posts.allTestimonies">Témoignages</a>
+            <?php if (isset($_SESSION['auth'])): ?>
+    <a href="index.php?p=admin.posts.adminTestimony">Validation Témoignage ADMIN</a>
+    <a href="index.php?p=admin.posts.blog">Ajout d'article</a>
+              
+            <?php endif ?>
+    <a href="index.php?p=posts.campagne">La Campagne</a>
+    <a href="index.php?p=posts.blog">Blog</a>
+
+
+    <?= $_SESSION['connect']?>
+
     </div>
+
 
     <img src="img/logo.png" alt="LGBH" id="logo">
   </div>
@@ -59,13 +59,14 @@
         <!-- <li><a href="index.php?p=admin.posts.adminTestimony">Validation Témoignage ADMIN</a></li> -->
         <li><a href="index.php?p=posts.campagne">La Campagne</a></li>
         <li><a href="index.php?p=posts.blog">Blog</a></li>
-      </ul>
+        <li><a href="/forum">Forum</a></li>
+      </ul>   
     </div>
     <div id="icone-rs">
       <i class="devicon-facebook-plain"></i>
       <i class="devicon-twitter-plain"></i>
     </div>
-    <h5>Crée par LaFabrik du Numérique | Copyright @ 2017 La Fabrik</h5>
+    <h5>Crée par LaFabrik du Numérique | Copyright @ 2017 La Fabrik</h5> 
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
