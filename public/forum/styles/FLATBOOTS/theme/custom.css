@@ -1,0 +1,105 @@
+/*****************************************************************
+* Custom CSS Stylesheet. You can add any custom CSS selectors here after the comment line 
+* They will be given the highest priority on any elements on the forum
+* Customize your forum color scheme in one click: www.sitesplat.com/phpBB3/ 
+* **************************************************************
+*
+* FLATBOOTS @SiteSplat.com - Custom CSS STYLESHEET - 
+* 
+* **************************************************************
+*****************************************************************/
+
+/*====================================================
+=                   HEADER SECTION                   =
+====================================================*/
+
+	/* NAVBAR Background Color */
+	.navbar-inverse{
+		border-color: #2A333C;
+		background-color: #2A333C;
+	}
+
+	/* NAVBAR Logo Brand */
+	.navbar-brand{
+		height: auto;
+		padding: 10px 15px;
+	}
+
+	/* NAVBAR Text link */
+	.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
+		margin-top: 10px;
+	}
+
+	/* NAVBAR Dropdown link mouse hover */
+	.navbar-nav-fancy>li:before{
+		background-color: #BC2127;
+	}
+
+	/* Teaser Header Background Image */
+	.masthead{
+		animation-name: none;
+		-webkit-animation-name: none;
+	}
+
+	/* Teaser Header Background */
+	.masthead:before{
+		background-image: url(./images/tile-bg-head.png);
+		background-color: #BC2127;
+		background-repeat: repeat;
+		-webkit-background-size: initial;
+		background-size: initial;
+		-ms-background-position-x: center;
+		background-position-x: center;
+		-ms-background-position-y: -6em;
+		background-position-y: -6em;
+		background-attachment: fixed;
+	}
+
+/*====================================================
+=                 CONTAINER SECTION                  =
+====================================================*/
+
+	/* Forum Panel Header Background Color */
+	.panel-forum>.panel-heading{
+		background-color: #BC2127;
+	}
+
+	/* Ajax Chat Post */
+	.chatpost{
+		padding: 5px 0px 0px 5px;
+		border-radius: 0px;
+		border-left: none;
+		border-right: none;
+		border-bottom: 1px solid #CCCCCC;
+	}
+
+/*====================================================
+=                   FOOTER SECTION                   =
+====================================================*/
+
+	/* Pre-Footer First Background Color */
+	.section-pre-footer{
+		background-color: #3B4754;
+	}
+
+		/* Pre-Footer Second Background Color */
+		.section-pre-footer .section-bg{
+			background-color: #4F5F70;
+		}
+
+	/* Sub Footer Background Color */
+	.burned-asphalt{
+		background-color: #2A333C;
+	}
+
+/*====================================================
+=            RESPONSIVE MOBILE CUSTOM CSS            =
+====================================================*/
+
+@media screen and (max-width: 468px){
+	/* Teaser Header Background */
+	.masthead:before{
+		-ms-background-position-y: -8em;
+		background-position-y: -8em;
+	}
+}
