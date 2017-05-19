@@ -96,14 +96,45 @@ class Table
         $pagination = round((int)$nbRows->nbrow / $nbDisplay);
         $start = $page * $nbDisplay - $nbDisplay;
         $resultats = $this->query(" SELECT articles.title,
+         articles.id,   
          articles.text,
-         DATE_FORMAT(date, 'Le %d/%m/%Y à %H:%i:%s') as date_creation_fr,
+         DATE_FORMAT(articles.date, 'Le %d/%m/%Y à %H:%i:%s') as date_article_fr,
+         comments.authors,
+         comments.texte,   
+         DATE_FORMAT(comments.date, 'Le %d/%m/%Y à %H:%i:%s') as date_comment_fr,
          users.pseudo FROM $this->table 
-         LEFT JOIN users ON articles.users_id = users.id 
-         ORDER BY date_creation_fr DESC 
+         LEFT JOIN users ON articles.users_id = users.id
+         LEFT JOIN comments ON comments.id_article = articles.id 
+         ORDER BY date_article_fr DESC 
          LIMIT $start, $nbDisplay");
         $resultats['nbpage']=$pagination;
         return $resultats;
+    }
+
+    public function uploadImg($name, $img, $description, $way="/public/img"){
+         if (isset($name, $img, $description)) {
+            $assoces= $this->query("INSERT INTO $this->table
+                        SET name = ?, img = ?, description = ?",
+                        array($name, $img["name"], $description));
+
+            $dir = ROOT .$way;
+            $name= $img['name'];
+            $taille_maxi = 100000;
+            $taille = filesize($img['tmp_name']);
+            $extensions = array('.png', '.gif', '.jpg', '.jpeg');
+            $extension = strrchr($img['name'], '.');
+            //Début des vérifications de sécurité...
+                if(in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
+                {
+                    if($taille<$taille_maxi){
+                         if (!move_uploaded_file($img['tmp_name'], "$dir/$name")) {
+                            echo 'ERROR';
+                        }else{
+                            echo "C'est bon !";
+                        }
+                    }
+                }
+            }
     }
 
 }

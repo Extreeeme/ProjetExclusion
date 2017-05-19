@@ -10,7 +10,7 @@ class UsersController extends AppController {
 
     public function login(){
         $errors = false;
-       
+
         if(!empty($_POST)){
             $auth = new DBAuth(App::getInstance()->getDb());
             if($auth->login($_POST['username'], $_POST['user_password'])){
@@ -31,6 +31,3 @@ class UsersController extends AppController {
         exit();
     }
 }
-
-
-

@@ -1,13 +1,14 @@
 <?php foreach ($pagination as $article) : ?>
-<h1><?= $article->title?></h1>
-<p><?= $article->date_creation_fr ?></p>
+<h1> <a href="index.php?p=posts.showArticle&id=<?=$article->id?>"><?= $article->title?></a></h1>
+<p><?= $article->date_article_fr ?></p>
 <p><?= $article->text ?></p>
 <?php endforeach; ?>
 
-<?php 
+<?php
 $customPagination = 0;
-while ($customPagination < $nbpage) {
- 	echo '<span><a href="index.php?p=posts.blog&page='.($customPagination+1).'">'.($customPagination+1).'</a>|</span>';
- 	$customPagination++;
-	
- } ?>
+while ($customPagination < $nbpage) : ?>
+ 	<span><a href="index.php?p=posts.blog&page=<?=($customPagination+1)?>"><?=($customPagination+1)?></a>|</span>
+
+	<?php
+ 		$customPagination++;
+ endwhile; ?>

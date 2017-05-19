@@ -2,8 +2,7 @@
 
 namespace App\Controller;
 
-use Core\HTML\Zip;
-
+use Core\Zip\Zip;
 use Core\Controller\Controller;
 
 class CampagnesController extends AppController{
@@ -16,8 +15,11 @@ class CampagnesController extends AppController{
     }
 
     public function index(){
-        $campagne = $this->Campagne->pictureSelect();
+        $campagne = $this->Campagne->all();
+        Zip::zipDir('img/campagne', 'img/tmp/campagne.zip');
         $this->render('campagnes.index', compact('campagne'));
+        
+        
     }
 
 

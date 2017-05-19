@@ -1,6 +1,6 @@
 <?php
 namespace Core\Zip;
-
+use \ZipArchive;
 
 class Zip
 {
@@ -17,6 +17,7 @@ class Zip
         $filePath = "$folder/$f";
         // Remove prefix from file path before add to zip.
         $localPath = substr($filePath, $exclusiveLength);
+        var_dump($zipFile);
         if (is_file($filePath)) {
           $zipFile->addFile($filePath, $localPath);
         } elseif (is_dir($filePath)) {
@@ -44,8 +45,10 @@ class Zip
     $dirName = $pathInfo['basename'];
 
     $z = new ZipArchive();
+    var_dump($z);
+    var_dump($dirName);
     $z->open($outZipPath, ZIPARCHIVE::CREATE);
-    $z->addEmptyDir($dirName);
+    // $z->addEmptyDir($dirName);
     self::folderToZip($sourcePath, $z, strlen("$parentPath/"));
     $z->close();
   }

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Core\Controller\Controller;
+use Core\HTML\BootstrapForm;
 
 class PostsController extends AppController{
 
@@ -12,6 +13,7 @@ class PostsController extends AppController{
         //$this->loadModel('Category');
         $this->loadModel('Testimonie');
         $this->loadModel('Blog');
+        $this->loadModel('Comment');
 
     }
 
@@ -59,10 +61,24 @@ class PostsController extends AppController{
         }else{
             $page = 1;
         }
-        $blog = $this->Blog->selectArticle();
         $pagination = $this->Blog->pagination($page);
         $nbpage = array_pop($pagination);
-        $this->render('posts.blog', compact('blog', 'pagination', 'nbpage'));
+        $form = new BootstrapForm();
+        $this->render('posts.blog', compact('pagination', 'nbpage', 'form'));
     }
 
+    public function showArticle()
+    {
+      if(isset($_POST["author"], $_POST["comment"])){
+          $comment= $this->Comment->addComment($_POST["author"], $_POST["comment"], $_POST["id_article"]);
+      }
+      if(isset($_GET['id'])){
+        $article = $this->Blog->articleID($_GET['id']);
+        $comments = $this->Blog->commentsID($_GET['id']);
+        $form = new BootstrapForm();
+        $this->render('posts.article', compact('article', 'form', 'comments'));
+      }else{
+        $this->notFound();
+      }
+    }
 }
