@@ -18,6 +18,9 @@ class App{
 
     public static function load(){
         session_start();
+        if(!isset($_SESSION['connect'])){
+            $_SESSION['connect'] = "<a href='index.php?p=users.login'>Connexion</a>";
+        }
         require ROOT . '/app/Autoloader.php';
         App\Autoloader::register();
         require ROOT . '/core/Autoloader.php';

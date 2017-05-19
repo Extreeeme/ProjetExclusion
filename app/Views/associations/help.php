@@ -5,6 +5,8 @@
     <?php if(isset($_SESSION['auth'])): ?>
     <form method="post" enctype="multipart/form-data">
         <?=$form->input('name','Nom de l\'association',['type'=>'text']);?>
+        <?=$form->input('siteWeb','Adresse du site web',['type'=>'url']);?>
+        <?=$form->input('Numerodetel','Numero de Téléphone',['type'=>'text']);?>
         <?=$form->input('img','Logo Association',['type'=>'file']);?>
         <?=$form->input('description','Description Association',['type'=>'textarea']);?>
         <?=$form->submit('envoyer');?>

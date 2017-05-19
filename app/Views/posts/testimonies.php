@@ -12,3 +12,4 @@
 	</div>
 	<a class="btn btn-default col-md-offset-5 col-md-2" href="index.php?p=posts.FormTestimony">Poster un témoignage</a>
 </div>
+

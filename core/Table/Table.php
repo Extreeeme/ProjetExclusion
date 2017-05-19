@@ -111,4 +111,27 @@ class Table
         return $resultats;
     }
 
+    public function uploadImg($array, $img, $way="/public/img"){
+         if (isset($array, $img)) {
+            $assoces= $this->create($array);
+            $dir = ROOT .$way;
+            $name= $img['name'];
+            $taille_maxi = 100000;
+            $taille = filesize($img['tmp_name']);
+            $extensions = array('.png', '.gif', '.jpg', '.jpeg');
+            $extension = strrchr($img['name'], '.');
+            //Début des vérifications de sécurité...
+                if(in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
+                {
+                    if($taille<$taille_maxi){
+                         if (!move_uploaded_file($img['tmp_name'], "$dir/$name")) {
+                            echo 'ERROR';
+                        }else{
+                            echo "C'est bon !";
+                        }
+                    }
+                }
+            }
+    }
+
 }
