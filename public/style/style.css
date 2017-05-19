@@ -1,40 +1,40 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 body{
-	font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #header{
 	position: fixed;
 	width: 100%;
-	height: 120px;
+	height: 100px;
 	background-color: #2A333C;
 	border-bottom: 25px solid #C12127;
 }
 
 #header li{
-	list-style: none;
-	text-align: center;
-	margin-bottom: 20px;
-	font-size: 20px;
-	margin-left: -50px;
+    list-style: none;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    margin-left: -50px;
 }
 
 #sous-header{
 	width: 100%;
-	height: 150px;
+	height: 120px;
 }
 
 a{
-	text-decoration: none;
-	color: white;
+    text-decoration: none;
+    color: white;
 }
 
 #logo{
-	width: 9%;
-	position: absolute;
-	top: 0;
-	right: 5px;
+    width: 9%;
+    position: absolute;
+    top: 0;
+    right: 5px;
 }
 
 #content{
@@ -42,35 +42,35 @@ a{
 }
 
 #footer{
-	width: 100%;
-	height: 150px;
-	background-color: #C12127;
-	color: white;
+    width: 100%;
+    height: 125px;
+    background-color: #C12127;
+    color: white;
 }
 
 #plan-site ul{
-	display: flex;
-	padding-top: 45px;
-	list-style: none;
+    display: flex;
+    padding-top: 45px;
+    list-style: none;
 }
 
 #plan-site ul li{
-	margin-right: 15px;	
+    margin-right: 15px;    
 }
 
 #footer h5{
-	padding-left: 40px;
+    padding-left: 40px;
 }
 
 i{
-	margin-right: 20px;
+    margin-right: 20px;
 }
 
 #icone-rs{
-	float: right;
-	margin-top: -80px;
-	margin-right: 50px;
-	font-size: 50px;
+    float: right;
+    margin-top: -80px;
+    margin-right: 50px;
+    font-size: 40px;
 }
 
 /*
@@ -89,14 +89,14 @@ i{
   margin: 0 auto;
   float: none;
   -webkit-transition: all 0.3s;
-	        transition: all 0.3s;
+            transition: all 0.3s;
 }
 
 .menu-icon > span {
   position: absolute;
   top: 50%;
   display: block;
-  width: 100%;
+  width: 90%;
   height: 0.5em;
   margin-top: -0.5em;
   background-color: white;
@@ -112,64 +112,64 @@ i{
   background-color: white;
   border-radius: 3px;
   -webkit-transition: all 0.3s;
-	        transition: all 0.3s;
+            transition: all 0.3s;
 }
 
 .menu-icon > span:before {
   -webkit-transform: translateY(-1em);
-	        transform: translateY(-1em);
+            transform: translateY(-1em);
 }
 
 .menu-icon > span:after {
   -webkit-transform: translateY(1em);
-	        transform: translateY(1em);
+            transform: translateY(1em);
 }
 
 /* OPENED */
 
 .menu-icon.open {
   -webkit-transform: rotate(45deg);
-	        transform: rotate(45deg);
+            transform: rotate(45deg);
 }
 
 .menu-icon.open > span:before {
   -webkit-transform: rotate(90deg);
-	        transform: rotate(90deg);
+            transform: rotate(90deg);
 }
 
 .menu-icon.open > span:after {
   -webkit-transform: rotate(90deg);
-	        transform: rotate(90deg);
+            transform: rotate(90deg);
 }
 
 /* Navbarre */
 
 @keyframes pageMobile{
-	0%{margin-left: -275px;}
-	100%{margin-left: 0%;}
+    0%{margin-left: -275px;}
+    100%{margin-left: 0%;}
 }
 @keyframes pageMobileHidden{
-	0%{margin-left: 0%;}
-	100%{margin-left: -275px;}
+    0%{margin-left: 0%;}
+    100%{margin-left: -275px;}
 }
 #navmobile{
-	position: fixed;
-	height: 100%; 
-	color: white;
-	top: 0px;
-	width: 250px;
-	background: rgba(42, 51, 60, 0.9);
-	border-right: 25px solid rgb(193, 33, 39);
-	top: 0px; 
-	z-index: 10;
+    position: fixed;
+    height: 100%; 
+    color: white;
+    top: 0px;
+    width: 250px;
+    background: rgba(42, 51, 60, 0.9);
+    border-right: 25px solid rgb(193, 33, 39);
+    top: 0px; 
+    z-index: 10;
 }
 .hidden{
-	margin-left: -275px;
+    margin-left: -275px;
 }
 .cache{
-	animation-name: pageMobileHidden;
-	animation-duration: .5s;
-	animation-fill-mode: forwards;
+    animation-name: pageMobileHidden;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
 }
 .visible{
 	animation-name: pageMobile;
@@ -181,10 +181,10 @@ i{
 
 #header-accueil{
 	width: 100%;
-	height: 800px;
+	height: 750px;
 	margin-top: -25px;
 	background-color: #2A333C;
-	border-bottom: 50px solid #C12127;
+	border-bottom: 25px solid #C12127;
 }
 
 #header-accueil ul{
@@ -196,7 +196,11 @@ i{
 	color: white;
 	list-style: none;
 	text-align: center;
-	font-size: 30px;
+	font-size: 20px;
+}
+
+#header-accueil h1{
+  font-size: 1.8em;
 }
 
 #header-accueil .desc{
@@ -211,10 +215,12 @@ i{
 
 #content-accueil h1{
 	font-family: 'Amaranth', sans-serif;
+  font-size: 1.5em;
+  padding: 0 20px 0 20px;
 }
 
 #content-accueil p{
-	font-size: 25px;
+	font-size: 15px;
 	width: 50%;
 	margin: 50px;
 }
@@ -320,23 +326,21 @@ i{
 
 /* Campagne */
 
-#texte{
-	float: left;
-	margin-top: 16%;
-	margin-left: 2%;
-	width: 40%;
-	text-align: justify;
+#campagne-content{
+  display: flex;
+}
 
+#campagne-content p{
+  width: 40%;
+  margin: 50px;
 }
 
 #eddycarrousel{
-	float: right;
-	margin-top: -35%;
-	margin-right: 5%;
+  width: 40%;
+  margin:50px;
 }
+/*td{
+  border:1px solid black;
+}*/
 
-#titre{
-	float: left;
-	margin-top: 30%;
-	margin-left: 5%;
-}
+/*TEMOIGNAGES*/

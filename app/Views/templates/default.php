@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Le Guide du Bon Homophobe</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="style/normalize.css">
   <link href="https://fonts.googleapis.com/css?family=Amaranth|Special+Elite" rel="stylesheet">

@@ -1,5 +1,6 @@
 <div id="header-accueil">
 	<ul>
+	<li><h1>Le guide du bon homophobe</h1></li>
 		<li>1 ) "Etre PD c'est contre-nature".</li>
 			<li class="desc">Etre borné et stupide aussi.</li>
 
