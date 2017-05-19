@@ -38,6 +38,7 @@ a{
 }
 #content{
 	width: 100%;
+  min-height: 370px;
 }
 
 #footer{
@@ -80,6 +81,15 @@ i{
   font-size: 40px;
 }
 
+.container{
+  width: 50%;
+  height: 500px;
+  margin-top: 50px;
+  margin-bottom: 150px;
+  margin-right: 50px;
+  z-index: -1;
+}
+
 /*
   menu icon css3
 */
@@ -95,6 +105,7 @@ i{
   /* to center */
   margin: 0 auto;
   float: none;
+
   -webkit-transition: all 0.3s;
             transition: all 0.3s;
 }
@@ -175,7 +186,7 @@ i{
   height: 100%;
   padding-top: 10px;
   padding-right: 20px;
-  font-size: 20px;
+  font-size: 15px;
   padding-left: 20px;
   text-align: center;
   transition-duration: 0.3s;
@@ -383,6 +394,7 @@ i{
   background-color: #C12127;
   color: white;
   border:none;
+  padding: 5px;
   font-size: 1.3em;
   margin-bottom: 50px;
 }
