@@ -23,15 +23,16 @@
     <div class="menu-icon" onclick="navMobile()">
           <span></span>
       </div>
-    <div  id="navmobile" class="hidden">      
-     
+    <div  id="navmobile" class="hidden">
+
     <a href="index.php?p=posts.index" class="firstA">Accueil</a>
     <a href="index.php?p=associations.help">Trouver de l'aide</a>
     <a href="index.php?p=posts.allTestimonies">Témoignages</a>
+    <a href="http://leguidedubonhomophobe.coding-moulins.xyz/forum/">Forum</a>
             <?php if (isset($_SESSION['auth'])): ?>
     <a href="index.php?p=admin.posts.adminTestimony">Validation Témoignage ADMIN</a>
     <a href="index.php?p=admin.posts.blog">Ajout d'article</a>
-              
+
             <?php endif ?>
     <a href="index.php?p=posts.campagne">La Campagne</a>
     <a href="index.php?p=posts.blog">Blog</a>
@@ -60,13 +61,13 @@
         <li><a href="index.php?p=posts.campagne">La Campagne</a></li>
         <li><a href="index.php?p=posts.blog">Blog</a></li>
         <li><a href="/forum">Forum</a></li>
-      </ul>   
+      </ul>
     </div>
     <div id="icone-rs">
       <i class="devicon-facebook-plain"></i>
       <i class="devicon-twitter-plain"></i>
     </div>
-    <h5>Crée par LaFabrik du Numérique | Copyright @ 2017 La Fabrik</h5> 
+    <h5>Crée par LaFabrik du Numérique | Copyright @ 2017 La Fabrik</h5>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
